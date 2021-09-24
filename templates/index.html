@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>삐빅 출근입니다</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="../static/wise.js"></script>
+
+<style>
+	* {
+        box-sizing: border-box;
+	}
+  	body {
+		height: 1000px;
+        background-color: #E0E0E0;
+        text-align: center;
+ 	}
+
+    .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+
+        /* 설명을 위해서 */
+        /*width: 10px;*/
+        /*background-color: red;*/
+    }
+
+    .container {
+        margin: auto;
+        width: 100%;
+        background-color: #E0E0E0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .checkin-box {
+        width: 500px;
+        margin: auto;
+    }
+
+
+    .checkout-box {
+        width: 500px;
+        margin: auto;
+    }
+
+    /*.checkout-img:hover {*/
+    /*    background-image: url('/static/start.png');*/
+    /*    height: 200px;*/
+    /*    width: 200px;*/
+
+    /*}*/
+
+ 
+	.timerBox{
+		width: 100%;
+        margin: auto;
+		/*outline: 2px solid black;*/
+	}
+	.timerBox .time{
+		font-size: 30pt;
+		color: #4C4C4C;
+		text-align: center;
+		font-family: sans-serif;
+	}
+	.btnBox{
+		margin: 20px auto;
+		text-align: center;
+	}
+	.btnBox .fa{
+		margin: 0px 5px;
+		font-size: 30pt;
+		color: #FAED7D;
+		cursor: pointer;
+	}
+
+    .Clock {
+        font-size: 80px;
+    }
+
+</style>
+
+
+</head>
+<body>
+    <div class="helper"></div><div class="container">
+    <div class="checkin-box">
+        <div class="table">
+            <span id="wise-box">
+            </span>
+        </div>
+
+     <img id="startbtn" class="checkin-img" onclick="check_in()" src="/static/start.png" width="200" height="200">
+
+    </div>
+    <div class="checkout-box">
+        <div id='box' class="timer">
+                <div id='timerBox' class="timerBox">
+                    <div id="time" class="time">00:00:00초 동안 업무중</div>
+                </div>
+                <div class="btnBox">
+<!--                    <i id="startbtn" class="fa fa-play" aria-hidden="true"></i>-->
+<!--                    <i id="pausebtn" class="fa fa-pause" aria-hidden="true"></i>-->
+<!--                    <i id="stopbtn" class="fa fa-stop" aria-hidden="true"></i>-->
+                </div>
+            </div>
+        <img id="stopbtn" class="checkout-img" onclick="check_out()" src="/static/working.gif" width="200" height="200">
+    </div>
+    <div id="Clockday">00/00/00</div>
+    <div class="Clock" id="Clock">00:00</div>
+    </div>
+
+
+</body>
+</html>
